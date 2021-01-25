@@ -1,19 +1,19 @@
 import HttpStatus from 'http-status-codes';
-import * as UserService from '../services/user.service';
+import * as PizzaService from '../services/pizza.service';
 
 /**
- * Controller to get all users available
+ * Controller to get all pizzas available
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const getAllUsers = async (req, res, next) => {
+export const getAllPizzas = async (req, res, next) => {
   try {
-    const data = await UserService.getAllUsers();
+    const data = await PizzaService.getAllPizzas();
     res.status(HttpStatus.OK).json({
       code: HttpStatus.OK,
       data: data,
-      message: 'All users fetched successfully'
+      message: 'All pizzas fetched successfully'
     });
   } catch (error) {
     next(error);
@@ -21,18 +21,18 @@ export const getAllUsers = async (req, res, next) => {
 };
 
 /**
- * Controller to get a single user
+ * Controller to get a single pizza
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const getUser = async (req, res, next) => {
+export const getPizza = async (req, res, next) => {
   try {
-    const data = await UserService.getUser(req.params._id);
+    const data = await PizzaService.getPizza(req.params._id);
     res.status(HttpStatus.OK).json({
       code: HttpStatus.OK,
       data: data,
-      message: 'User fetched successfully'
+      message: 'Pizza fetched successfully'
     });
   } catch (error) {
     next(error);
@@ -40,18 +40,18 @@ export const getUser = async (req, res, next) => {
 };
 
 /**
- * Controller to create a new user
+ * Controller to create a new pizza
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const newUser = async (req, res, next) => {
+export const newPizza = async (req, res, next) => {
   try {
-    const data = await UserService.newUser(req.body);
+    const data = await PizzaService.newPizza(req.body);
     res.status(HttpStatus.CREATED).json({
       code: HttpStatus.CREATED,
       data: data,
-      message: 'User created successfully'
+      message: 'Pizza created successfully'
     });
   } catch (error) {
     next(error);
@@ -59,18 +59,18 @@ export const newUser = async (req, res, next) => {
 };
 
 /**
- * Controller to update a user
+ * Controller to update a pizza
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const updateUser = async (req, res, next) => {
+export const updatePizza = async (req, res, next) => {
   try {
-    const data = await UserService.updateUser(req.params._id, req.body);
+    const data = await PizzaService.updatePizza(req.params._id, req.body);
     res.status(HttpStatus.ACCEPTED).json({
       code: HttpStatus.ACCEPTED,
       data: data,
-      message: 'User updated successfully'
+      message: 'Pizza updated successfully'
     });
   } catch (error) {
     next(error);
@@ -78,18 +78,18 @@ export const updateUser = async (req, res, next) => {
 };
 
 /**
- * Controller to delete a user
+ * Controller to delete a pizza
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const deleteUser = async (req, res, next) => {
+export const deletePizza = async (req, res, next) => {
   try {
-    await UserService.deleteUser(req.params._id);
+    await PizzaService.deletePizza(req.params._id);
     res.status(HttpStatus.OK).json({
       code: HttpStatus.OK,
       data: [],
-      message: 'User deleted successfully'
+      message: 'Pizza deleted successfully'
     });
   } catch (error) {
     next(error);

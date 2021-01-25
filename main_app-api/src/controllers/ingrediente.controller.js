@@ -1,19 +1,19 @@
 import HttpStatus from 'http-status-codes';
-import * as UserService from '../services/user.service';
+import * as IngredienteService from '../services/ingrediente.service';
 
 /**
- * Controller to get all users available
+ * Controller to get all ingredientes available
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const getAllUsers = async (req, res, next) => {
+export const getAllIngredientes = async (req, res, next) => {
   try {
-    const data = await UserService.getAllUsers();
+    const data = await IngredienteService.getAllIngredientes();
     res.status(HttpStatus.OK).json({
       code: HttpStatus.OK,
       data: data,
-      message: 'All users fetched successfully'
+      message: 'All ingredientes fetched successfully'
     });
   } catch (error) {
     next(error);
@@ -21,18 +21,18 @@ export const getAllUsers = async (req, res, next) => {
 };
 
 /**
- * Controller to get a single user
+ * Controller to get a single ingrediente
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const getUser = async (req, res, next) => {
+export const getIngrediente = async (req, res, next) => {
   try {
-    const data = await UserService.getUser(req.params._id);
+    const data = await IngredienteService.getIngrediente(req.params._id);
     res.status(HttpStatus.OK).json({
       code: HttpStatus.OK,
       data: data,
-      message: 'User fetched successfully'
+      message: 'Ingrediente fetched successfully'
     });
   } catch (error) {
     next(error);
@@ -40,18 +40,18 @@ export const getUser = async (req, res, next) => {
 };
 
 /**
- * Controller to create a new user
+ * Controller to create a new ingrediente
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const newUser = async (req, res, next) => {
+export const newIngrediente = async (req, res, next) => {
   try {
-    const data = await UserService.newUser(req.body);
+    const data = await IngredienteService.newIngrediente(req.body);
     res.status(HttpStatus.CREATED).json({
       code: HttpStatus.CREATED,
       data: data,
-      message: 'User created successfully'
+      message: 'Ingrediente created successfully'
     });
   } catch (error) {
     next(error);
@@ -59,18 +59,18 @@ export const newUser = async (req, res, next) => {
 };
 
 /**
- * Controller to update a user
+ * Controller to update a ingrediente
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const updateUser = async (req, res, next) => {
+export const updateIngrediente = async (req, res, next) => {
   try {
-    const data = await UserService.updateUser(req.params._id, req.body);
+    const data = await IngredienteService.updateIngrediente(req.params._id, req.body);
     res.status(HttpStatus.ACCEPTED).json({
       code: HttpStatus.ACCEPTED,
       data: data,
-      message: 'User updated successfully'
+      message: 'Ingrediente updated successfully'
     });
   } catch (error) {
     next(error);
@@ -78,18 +78,18 @@ export const updateUser = async (req, res, next) => {
 };
 
 /**
- * Controller to delete a user
+ * Controller to delete a ingrediente
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
  */
-export const deleteUser = async (req, res, next) => {
+export const deleteIngrediente = async (req, res, next) => {
   try {
-    await UserService.deleteUser(req.params._id);
+    await IngredienteService.deleteIngrediente(req.params._id);
     res.status(HttpStatus.OK).json({
       code: HttpStatus.OK,
       data: [],
-      message: 'User deleted successfully'
+      message: 'Ingrediente deleted successfully'
     });
   } catch (error) {
     next(error);

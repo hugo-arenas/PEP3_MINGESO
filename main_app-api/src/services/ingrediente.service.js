@@ -1,20 +1,20 @@
-import User from '../models/user.model';
+import Ingrediente from '../models/ingrediente.model';
 
-//get all users
-export const getAllUsers = async () => {
-  const data = await User.find();
+//get all ingredientes
+export const getAllIngredientes = async () => {
+  const data = await Ingrediente.find();
   return data;
 };
 
-//create new user
-export const newUser = async (body) => {
-  const data = await User.create(body);
+//create new ingredientes
+export const newIngrediente = async (body) => {
+  const data = await Ingrediente.create(body);
   return data;
 };
 
-//update single user
-export const updateUser = async (_id, body) => {
-  const data = await User.findByIdAndUpdate(
+//update single ingrediente
+export const updateIngrediente = async (_id, body) => {
+  const data = await Ingrediente.findByIdAndUpdate(
     {
       _id
     },
@@ -26,14 +26,14 @@ export const updateUser = async (_id, body) => {
   return data;
 };
 
-//delete single user
-export const deleteUser = async (id) => {
-  await User.findByIdAndDelete(id);
+//delete single ingrediente
+export const deleteIngrediente = async (id) => {
+  await Ingrediente.findByIdAndDelete(id);
   return '';
 };
 
-//get single user
-export const getUser = async (id) => {
-  const data = await User.findById(id);
+//get single ingrediente
+export const getIngrediente = async (id) => {
+  const data = await Ingrediente.findById(id);
   return data;
 };

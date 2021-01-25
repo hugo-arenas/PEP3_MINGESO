@@ -1,20 +1,20 @@
-import User from '../models/user.model';
+import Pizza from '../models/pizza.model';
 
-//get all users
-export const getAllUsers = async () => {
-  const data = await User.find();
+//get all pizzas
+export const getAllPizzas = async () => {
+  const data = await Pizza.find();
   return data;
 };
 
-//create new user
-export const newUser = async (body) => {
-  const data = await User.create(body);
+//create new pizza
+export const newPizza = async (body) => {
+  const data = await Pizza.create(body);
   return data;
 };
 
-//update single user
-export const updateUser = async (_id, body) => {
-  const data = await User.findByIdAndUpdate(
+//update single pizza
+export const updatePizza = async (_id, body) => {
+  const data = await Pizza.findByIdAndUpdate(
     {
       _id
     },
@@ -26,14 +26,14 @@ export const updateUser = async (_id, body) => {
   return data;
 };
 
-//delete single user
-export const deleteUser = async (id) => {
-  await User.findByIdAndDelete(id);
+//delete single pizza
+export const deletePizza = async (id) => {
+  await Pizza.findByIdAndDelete(id);
   return '';
 };
 
-//get single user
-export const getUser = async (id) => {
-  const data = await User.findById(id);
+//get single pizza
+export const getPizza = async (id) => {
+  const data = await Pizza.findById(id);
   return data;
 };

@@ -7,6 +7,16 @@ const pizzaSchema = new Schema(
     }
   },
   {
+    description: {
+      type: String
+    }
+  },
+  {
+    ingredients: {
+      type: [String]
+    }
+  },
+  {
     timestamps: true
   }
 );

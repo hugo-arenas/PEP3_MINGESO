@@ -1,23 +1,21 @@
 import express from 'express';
-import * as userController from '../controllers/user.controller';
-import { newUserValidator } from '../validators/user.validator';
-import { userAuth } from '../middlewares/auth.middleware';
+import * as pizzaController from '../controllers/pizza.controller';
 
 const router = express.Router();
 
 //route to get all users
-router.get('', userController.getAllUsers);
+router.get('', pizzaController.getAllPizzas);
 
 //route to create a new user
-router.post('', newUserValidator, userController.newUser);
+router.post('', pizzaController.newPizza);
 
 //route to get a single user by their user id
-router.get('/:_id', userAuth, userController.getUser);
+router.get('/:_id', pizzaController.getPizza);
 
 //route to update a single user by their user id
-router.put('/:_id', userController.updateUser);
+router.put('/:_id', pizzaController.updatePizza);
 
 //route to delete a single user by their user id
-router.delete('/:_id', userController.deleteUser);
+router.delete('/:_id', pizzaController.deletePizza);
 
 export default router;

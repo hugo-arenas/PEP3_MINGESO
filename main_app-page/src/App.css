@@ -14,6 +14,7 @@
 }
 
 .App-header {
+  background-image: url("recalentarpizza-int.jpg");
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -36,3 +37,4 @@
     transform: rotate(360deg);
   }
 }
+

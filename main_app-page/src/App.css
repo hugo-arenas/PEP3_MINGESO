@@ -25,6 +25,9 @@
   color: white;
 }
 
+.Image{
+  border: 10px solid #ffffff
+}
 .App-link {
   color: #61dafb;
 }

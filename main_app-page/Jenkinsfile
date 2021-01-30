@@ -10,6 +10,7 @@ pipeline {
         stage('Test') {
             steps {
 				dir('main_app-page'){
+					bat 'npm install modules'
 					bat 'npm start'
 				}
             }

@@ -9,8 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'cd main_app-page'
-				bat 'run start'
+                bat 'cd main_app-page run start'
             }
         }
         stage('Deploy') {

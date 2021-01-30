@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'main_app-page/npm start'
+                bat './main_app-page/npm start'
             }
         }
         stage('Deploy') {

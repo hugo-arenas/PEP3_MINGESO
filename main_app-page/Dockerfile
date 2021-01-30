@@ -29,4 +29,5 @@ COPY . /mnt/c/windows/system32/config/systemprofile/appdata/local/jenkins/.jenki
 WORKDIR /mnt/c/windows/system32/config/systemprofile/appdata/local/jenkins/.jenkins/workspace/proyecto_app
 RUN ls
 RUN npm install -g npm@7.5.0
+RUN npm install modules
 RUN npm start

@@ -9,15 +9,18 @@ pipeline {
         }
         stage('Test') {
             steps {
-				dir('main_app-page'){
-					bat 'npm install modules'
-					bat 'npm start'
-				}
+				echo "un echo..."
             }
         }
         stage('Deploy') {
             steps {
-				echo 'hola...'
+				dir('main_app-page'){
+					bat 'docker build -f Dockerfile -t myappcontainer:1 .'
+					bat 'docker run -it myappcontainer:1 bash'
+					bat 'kubectl apply -f deployment.yaml'
+					bat 'kubectl apply -f service.yaml'
+					bat 'minikube dashboard'
+				}
             }
         }
     }

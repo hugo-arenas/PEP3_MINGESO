@@ -10,7 +10,6 @@ pipeline {
         stage('Test') {
             steps {
 				dir('main_app-page'){
-					bat 'npm install react-scripts -g'
 					bat 'npm start'
 				}
             }

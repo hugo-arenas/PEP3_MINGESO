@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: myappcontainer
+  labels:
+    app: myappcontainer
+spec:
+  selector:
+    app: myappcontainer
+ports:
+  - port: 8080
+    name: http
+  type: NodePort
